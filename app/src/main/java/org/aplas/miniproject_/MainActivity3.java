@@ -8,26 +8,14 @@ import android.widget.ListView;
 
 public class MainActivity3 extends AppCompatActivity {
 
-    ListView l;
-    String tutorials[]
-            = { "Algorithms", "Data Structures",
-            "Languages", "Interview Corner",
-            "GATE", "ISRO CS",
-            "UGC NET CS", "CS Subjects",
-            "Web Technologies" };
+        // Array of strings...
+        ListView simpleList;
+        String countryList[] = {"India", "China", "Australia", "Portugle", "America", "NewZealand"};
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
-
-        l = findViewById(R.id.list);
-        ArrayAdapter<String> arr;
-        arr
-                = new ArrayAdapter<String>(
-                this,
-                R.layout.support_simple_spinner_dropdown_item,
-                tutorials);
-        l.setAdapter(arr);
-    }
+        @Override   protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);      setContentView(R.layout.activity_main);
+            simpleList = (ListView)findViewById(R.id.simpleListView);
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_main3, R.id.list_view, countryList);
+            simpleList.setAdapter(arrayAdapter);
+        }
 }
